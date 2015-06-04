@@ -58,7 +58,7 @@ module.exports = {
       for(var i = 0; i < array.length; i++)
       {
       	var el = array[i];
-      	if(modeMap[el] == null)
+      	if(!modeMap[el])
       		modeMap[el] = 1;
       	else
       		modeMap[el]++;

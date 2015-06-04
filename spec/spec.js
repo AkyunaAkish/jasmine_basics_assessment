@@ -20,6 +20,7 @@ describe('#medianScore()', function() {
   });
   describe('#modeScore()', function() {
     it('Returns the mode of an array', function(){
-      expect(myCode.modeScore([82, 92, 75, 91, 92, 89, 95, 100, 86])).toEqual(92);
+      expect(myCode.modeScore([82, 92, 75,91, 92, 89, 95, 100, 86])).toEqual(92);
+      expect(myCode.modeScore([82,35,35])).toEqual(35);
      });
     });
