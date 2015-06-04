@@ -50,24 +50,21 @@ module.exports = {
       return (values[half-1] + values[half]) / 2.0;
     }
   },
-  modeScore: function(array) {
-      if(array.length === 0)
-      	return null;
-      var modeMap = {};
-      var maxEl = array[0], maxCount = 1;
-      for(var i = 0; i < array.length; i++)
-      {
-      	var el = array[i];
-      	if(!modeMap[el])
-      		modeMap[el] = 1;
-      	else
-      		modeMap[el]++;
-      	if(modeMap[el] > maxCount)
-      	{
-      		maxEl = el;
-      		maxCount = modeMap[el];
-      	}
-      }
-      return maxEl;
-  }
-};
+  modeScore: function(arr) {
+        var mode = {};
+    var max = 0;
+    var count = 0;
+
+    arr.forEach(function(e) {
+        if (mode[e]) { mode[e]++; }
+        else { mode[e] = 1; } 
+
+        if (count<mode[e]) { 
+            max = e;
+            count = mode[e];
+        }
+    });
+    
+    return max;
+}
+}
